@@ -1,10 +1,10 @@
 FROM node
 
-WORKDIR /myapp
+WORKDIR /myangularapp
 
 COPY . .
+RUN npm install -g http-server
 
-RUN npm install
 
-EXPOSE 9999
-CMD ["node", "server.js"]
+EXPOSE 4200
+CMD ["http-server", "--port", "4200"]
